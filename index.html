@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+     <link href="./src/output.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Dark Mode Styles -->
+  <style>
+      /* Dark mode styles */
+      body.dark-mode {
+          background-color: #0f172a !important;
+          color: #f8fafc !important;
+      }
+      
+      body.dark-mode header {
+          background-color: #0f172a !important;
+          border-bottom: 1px solid #334155;
+      }
+      
+      body.dark-mode #about {
+          background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+      }
+      
+      body.dark-mode #about h1 span:last-child {
+          color: #e2e8f0 !important;
+      }
+      
+      body.dark-mode #about p {
+          color: #cbd5e1 !important;
+      }
+      
+      body.dark-mode #skills {
+          background: linear-gradient(135deg, #020617 0%, #0f172a 100%) !important;
+      }
+      
+      body.dark-mode #contact {
+          background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+      }
+      
+      body.dark-mode #contact h1 span:last-child {
+          color: #e2e8f0 !important;
+      }
+      
+      body.dark-mode footer {
+          background: linear-gradient(135deg, #020617 0%, #0f172a 100%) !important;
+      }
+      
+      /* Dark mode toggle styles */
+      body.dark-mode #theme-toggle {
+          background-color: #374151 !important;
+      }
+      
+      body.dark-mode #theme-toggle .toggle-slider {
+          transform: translateX(24px) !important;
+      }
+      
+      body.dark-mode #theme-toggle .sun-icon {
+          opacity: 0 !important;
+      }
+      
+      body.dark-mode #theme-toggle .moon-icon {
+          opacity: 1 !important;
+      }
+      
+      /* Smooth transitions */
+      body, header, #about, #skills, #contact, footer {
+          transition: all 0.3s ease !important;
+      }
+  </style>
+</head>
+<body class="bg-white ">
+    <header class="bg-black h-20 w-full shadow-lg shadow-gray-700 bg-fixed ">
+      
+        <ul class="flex justify-end items-center text-white space-x-10 p-2 text-xl mx-4 font-bold">
+             <li> <h4 class="text-orange-400 items-center justify-start font-extrabold p-5 text-2xl bold mr-250 ">Blen</h4></li>
+            <li class=" hover:text-white  p-[5px] hover:bg-amber-600 decoration-black  transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:rounded-md border-black"><a href="index.html">Home</a></li>
+            <li class=" hover:text-white p-[10px] hover:bg-amber-600 decoration-black   transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover: rounded-md  border-black"><a href="#about">about Me</a></li>
+            <li class=" hover:text-white p-[5px] hover:bg-amber-600 decoration-black  transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:rounded-md border-black"><a href="#skills">Skills</a></li>
+             
+            <li class=" hover:text-white p-[5px] hover:bg-amber-600  decoration-black transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:rounded-md"><a href="#contact">Contact</a></li>
+            
+            <!-- Dark/Light Mode Toggle -->
+            <li class="ml-4">
+                <button id="theme-toggle" class="relative inline-flex items-center justify-center w-12 h-6 bg-gray-200 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 hover:scale-105">
+                    <span class="sr-only">Toggle dark mode</span>
+                    <div class="toggle-slider absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 transform translate-x-0 shadow-md"></div>
+                    <div class="flex items-center justify-center w-full h-full">
+                        <svg class="sun-icon w-3 h-3 text-yellow-500 absolute left-1.5 opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="moon-icon w-3 h-3 text-gray-700 absolute right-1.5 opacity-0 transition-opacity duration-300" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </div>
+                </button>
+            </li>
+        
+        </ul>
+
+    </header>
+<section class="bg-[url(/images/photo_2025-08-12_10-50-08.jpg)] bg-cover bg-center bg-fixed min-h-screen w-full relative overflow-hidden">
+  <!-- Gradient overlay for better text readability -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+  
+  <!-- Content container with responsive positioning -->
+  <div class="relative h-full flex items-center justify-end lg:justify-end justify-center px-6 lg:pr-20">
+    <div class="max-w-2xl text-center  mt-[100px] lg:text-right space-y-6 lg:space-y-8">
+      <!-- Greeting with responsive typography -->
+      <div class="space-y-3 lg:space-y-4">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-extrabold leading-tight tracking-wide">
+          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Blen Gebre</span>
+        </h1>
+        
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold opacity-90">
+          Frontend Developer
+        </h2>
+      </div>
+
+      <!-- Description with responsive spacing -->
+      <p class="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed max-w-lg mx-auto lg:ml-auto">
+        A passionate software developer crafting beautiful, functional, and user-friendly web experiences. 
+        I transform ideas into digital reality with clean code and innovative design.
+      </p>
+
+      <!-- Social links with responsive sizing -->
+      <div class="flex justify-center lg:justify-end space-x-4 lg:space-x-6 pt-4">
+        <a href="blen2121" class="group transition-all duration-300 hover:scale-110">
+          <i class="fa-brands fa-instagram text-2xl sm:text-3xl lg:text-4xl text-white group-hover:text-orange-400 transition-colors"></i>
+        </a>
+        <a href="" class="group transition-all duration-300 hover:scale-110">
+          <i class="fa-brands fa-telegram text-2xl sm:text-3xl lg:text-4xl text-white group-hover:text-orange-400 transition-colors"></i>
+        </a>
+        </div>
+
+      <!-- Enhanced buttons with responsive sizing -->
+      <div class="flex flex-col sm:flex-row justify-center lg:justify-end space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-6 pt-6 lg:pt-8">
+        <button class="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-amber-600 hover:to-orange-600 transform text-sm sm:text-base">
+          <a href="contact.html" class="flex items-center justify-center space-x-2">
+            <span>Reach Me</span>
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </button>
+        
+        <button class="group relative px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 transform text-sm sm:text-base">
+          <a href="BlenGebreResume.pdf" class="flex items-center justify-center space-x-2">
+            <i class="fas fa-download group-hover:scale-110 transition-transform"></i>
+            <span>Download CV</span>
+          </a>
+   </button>
+      </div>
+    </div>
+        </div>
+    </section>
+
+      <hr class="border-2 mt-[20px]">
+    <section id="about" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <!-- Subtle background pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23f3f4f6" fill-opacity="0.4"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl text-center mb-12 sm:mb-16 font-bold">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">About</span> 
+                <span class="text-gray-800 ml-2 sm:ml-4">Me</span>
+            </h1>
+             
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+                <div class="flex justify-center order-2 lg:order-1">
+                    <div class="relative">
+                        <img src="images/photo_2025-08-20_20-47-02.jpg" class="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full object-cover shadow-2xl border-4 border-orange-200" alt="Blen Gebre">
+                        <div class="absolute -bottom-2 sm:-bottom-4 -right-2 sm:-right-4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-orange-400 to-amber-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-code text-white text-xl sm:text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 sm:space-y-6 order-1 lg:order-2">
+                    <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+                        Hi, I'm <span class="font-semibold text-orange-500">Blen</span>, a Software Engineering student at Addis Ababa University with a passion for building creative and impactful digital solutions. I enjoy learning new technologies and applying them to solve real-world problems.
+                    </p>
+                    
+                    <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+                        I've been exploring areas like web development, mobile app design, and algorithms, and I'm especially interested in how technology can make everyday tasks easier and more efficient.
+                    </p>
+                    
+                    <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+                        Outside of coding, I love working on collaborative projects, continuously improving my skills, and staying curious about the latest trends in software and technology.
+                    </p>
+                    
+                    <div class="flex items-center space-x-3 pt-4">
+                        <span class="text-xl sm:text-2xl">🚀</span>
+                        <p class="text-base sm:text-lg font-semibold text-gray-800">
+                            My goal is to grow as a software engineer and contribute to projects that bring value to people's lives.
+                        </p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="border-2 mt-[20px]">
+    <section class="w-full py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 relative overflow-hidden">
+        <!-- Subtle geometric pattern overlay -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Cpath d="M20 20c0 11.046-8.954 20-20 20s-20-8.954-20-20 8.954-20 20-20 20 8.954 20 20z"/%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-center mb-12 sm:mb-16 lg:mb-20 font-bold">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">My</span> 
+                <span class="text-white ml-2 sm:ml-4 lg:ml-6">Skills</span>
+            </h1>
+            
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 border border-white/10 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
+                    <div class="space-y-8 sm:space-y-10 lg:space-y-12">
+                        <div class="group">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 space-y-2 sm:space-y-0">
+                                <div class="flex items-center gap-3 sm:gap-4">
+                                    <i class="fa-brands fa-html5 text-orange-500 text-2xl sm:text-3xl lg:text-4xl group-hover:scale-110 transition-transform"></i>
+                                    <span class="text-lg sm:text-xl lg:text-2xl text-white font-semibold">HTML</span>
+                                </div>
+                                <span class="text-sm sm:text-lg lg:text-xl bg-orange-500/20 text-orange-400 px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-orange-500/30 w-fit">90%</span>
+                            </div>
+                            <div class="h-2 sm:h-3 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-2 sm:h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full transition-all duration-1000 ease-out" style="width:90%"></div>
+                            </div>
+                        </div>
+
+                        <div class="group">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 space-y-2 sm:space-y-0">
+                                <div class="flex items-center gap-3 sm:gap-4">
+                                    <i class="fa-brands fa-css3-alt text-blue-500 text-2xl sm:text-3xl lg:text-4xl group-hover:scale-110 transition-transform"></i>
+                                    <span class="text-lg sm:text-xl lg:text-2xl text-white font-semibold">CSS</span>
+                                </div>
+                                <span class="text-sm sm:text-lg lg:text-xl bg-blue-500/20 text-blue-400 px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-blue-500/30 w-fit">60%</span>
+                            </div>
+                            <div class="h-2 sm:h-3 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-2 sm:h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transition-all duration-1000 ease-out" style="width:60%"></div>
+                            </div>
+                        </div>
+
+                        <div class="group">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 space-y-2 sm:space-y-0">
+                                <div class="flex items-center gap-3 sm:gap-4">
+                                    <i class="fa-brands fa-js text-yellow-400 text-2xl sm:text-3xl lg:text-4xl group-hover:scale-110 transition-transform"></i>
+                                    <span class="text-lg sm:text-xl lg:text-2xl text-white font-semibold">JavaScript</span>
+                                </div>
+                                <span class="text-sm sm:text-lg lg:text-xl bg-yellow-500/20 text-yellow-400 px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-yellow-500/30 w-fit">85%</span>
+                            </div>
+                            <div class="h-2 sm:h-3 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-2 sm:h-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full transition-all duration-1000 ease-out" style="width:85%"></div>
+        </div>
+            </div>
+            
+                        <div class="group">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 space-y-2 sm:space-y-0">
+                                <div class="flex items-center gap-3 sm:gap-4">
+                                    <i class="fa-brands fa-python text-purple-500 text-2xl sm:text-3xl lg:text-4xl group-hover:scale-110 transition-transform"></i>
+                                    <span class="text-lg sm:text-xl lg:text-2xl text-white font-semibold">Python</span>
+                                </div>
+                                <span class="text-sm sm:text-lg lg:text-xl bg-purple-500/20 text-purple-400 px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-purple-500/30 w-fit">50%</span>
+                            </div>
+                            <div class="h-2 sm:h-3 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-2 sm:h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transition-all duration-1000 ease-out" style="width:50%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-center order-first lg:order-last">
+                        <div class="text-center space-y-4 sm:space-y-6">
+                            <div class="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-gradient-to-br from-orange-400 to-amber-500 rounded-full flex items-center justify-center mx-auto">
+                                <i class="fas fa-code text-white text-3xl sm:text-4xl lg:text-5xl"></i>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl text-white font-semibold">Technical Expertise</h3>
+                            <p class="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed max-w-xs sm:max-w-sm">
+                                Continuously expanding my skillset with modern web technologies and best practices
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="border-2 mt-[20px]">
+       <section id="contact" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 relative overflow-hidden">
+        <!-- Subtle pattern overlay -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23f97316" fill-opacity="0.05"%3E%3Ccircle cx="40" cy="40" r="3"/%3E%3C/g%3E%3C/svg%3E')] opacity-60"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl text-center mb-12 sm:mb-16 font-bold">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-600">Contact</span> 
+                <span class="text-gray-800 ml-2 sm:ml-4">Me</span>
+            </h1>
+            
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl border border-orange-200/50">
+                <form class="space-y-6 sm:space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                        <div class="form-group">
+                            <label class="block text-gray-700 mb-2 sm:mb-3 text-base sm:text-lg font-semibold" for="firstName">First name</label>
+                            <input class="w-full p-3 sm:p-4 border-2 border-orange-200 rounded-lg sm:rounded-xl bg-white/70 text-gray-800 focus:border-orange-500 focus:outline-none focus:bg-white transition-all duration-300 text-sm sm:text-base" type="text" id="firstName" name="firstName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="block text-gray-700 mb-2 sm:mb-3 text-base sm:text-lg font-semibold" for="middleName">Middle name</label>
+                            <input class="w-full p-3 sm:p-4 border-2 border-orange-200 rounded-lg sm:rounded-xl bg-white/70 text-gray-800 focus:border-orange-500 focus:outline-none focus:bg-white transition-all duration-300 text-sm sm:text-base" type="text" id="middleName" name="middleName">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="block text-gray-700 mb-2 sm:mb-3 text-base sm:text-lg font-semibold" for="email">Email</label>
+                        <input class="w-full p-3 sm:p-4 border-2 border-orange-200 rounded-lg sm:rounded-xl bg-white/70 text-gray-800 focus:border-orange-500 focus:outline-none focus:bg-white transition-all duration-300 text-sm sm:text-base" type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="block text-gray-700 mb-2 sm:mb-3 text-base sm:text-lg font-semibold" for="message">Message</label>
+                        <textarea class="w-full p-3 sm:p-4 border-2 border-orange-200 rounded-lg sm:rounded-xl bg-white/70 h-[150px] sm:h-[180px] lg:h-[200px] text-gray-800 focus:border-orange-500 focus:outline-none focus:bg-white transition-all duration-300 resize-none text-sm sm:text-base" id="message" name="message" rows="15" placeholder="Type your message here..." required></textarea>
+          </div> 
+          
+                    <div class="text-center pt-4 sm:pt-6">
+                        <button type="submit" class="group relative px-8 sm:px-10 lg:px-12 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-amber-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform text-sm sm:text-base">
+                            <i class="fas fa-paper-plane mr-2 sm:mr-3 group-hover:translate-x-1 transition-transform"></i>
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>  
+  <footer class="py-8 sm:py-10 lg:py-12 bg-gradient-to-r from-slate-900 via-gray-800 to-slate-900 relative overflow-hidden">
+        <!-- Subtle pattern overlay -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.02"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Blen Gebre</h4>
+                    <p class="text-sm sm:text-base text-gray-400 mt-2">Frontend Developer & Software Engineer</p>
+                </div>
+                
+                <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 text-sm sm:text-base lg:text-lg">
+                    <li class="hover:text-orange-400 transition-colors duration-300">
+                        <a href="index.html" class="flex items-center gap-1 sm:gap-2">
+                            <i class="fas fa-home text-sm sm:text-base"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="hover:text-orange-400 transition-colors duration-300">
+                        <a href="#about" class="flex items-center gap-1 sm:gap-2">
+                            <i class="fas fa-user text-sm sm:text-base"></i>
+                            <span>About Me</span>
+                        </a>
+                    </li>
+                    <li class="hover:text-orange-400 transition-colors duration-300">
+                        <a href="#skills" class="flex items-center gap-1 sm:gap-2">
+                            <i class="fas fa-code text-sm sm:text-base"></i>
+                            <span>Skills</span>
+                        </a>
+                    </li>
+                    <li class="hover:text-orange-400 transition-colors duration-300">
+                        <a href="#contact" class="flex items-center gap-1 sm:gap-2">
+                            <i class="fas fa-envelope text-sm sm:text-base"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
+                <p class="text-xs sm:text-sm text-gray-400">
+                    © 2024 Blen Gebre. Crafted with ❤️ and modern web technologies.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="script.js">
+
+</script>
+
+<!-- Dark Mode Toggle JavaScript -->
+<script>
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    // Apply the theme on page load
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+    
+    // Theme toggle functionality
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+        const body = document.body;
+        
+        if (body.classList.contains('dark-mode')) {
+            // Switch to light mode
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+        } else {
+            // Switch to dark mode
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+</script>
+</html>
