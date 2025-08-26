@@ -111,4 +111,6 @@ fetchPost(); // Call the function
       alert("Name cannot be empty!");
     }
   });
-</script>/*
+</script>*/
+console.log("A"-1
+)

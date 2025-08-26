@@ -35,12 +35,49 @@
           color: #cbd5e1 !important;
       }
       
+      /* Match skills and contact to about in dark mode */
       body.dark-mode #skills {
-          background: linear-gradient(135deg, #020617 0%, #0f172a 100%) !important;
+          background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
       }
-      
       body.dark-mode #contact {
           background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+      }
+      /* Make inner white cards dark too */
+      body.dark-mode #skills .bg-white,
+      body.dark-mode #contact .bg-white {
+          background-color: #1e293b !important;
+      }
+      /* Ensure headings/text are readable */
+      body.dark-mode #skills .text-gray-800,
+      body.dark-mode #contact .text-gray-800 { color: #e2e8f0 !important; }
+      body.dark-mode #skills .text-gray-600,
+      body.dark-mode #contact .text-gray-600 { color: #cbd5e1 !important; }
+      /* Progress bar tracks darker */
+      body.dark-mode #skills .bg-gray-200 { background-color: #475569 !important; }
+      /* Inputs/textarea in contact: dark backgrounds with white borders */
+      body.dark-mode #contact input,
+      body.dark-mode #contact textarea {
+          background-color: #0f172a !important;
+          color: #e2e8f0 !important;
+          border: 2px solid #ffffff !important;
+      }
+      body.dark-mode #contact input:focus,
+      body.dark-mode #contact textarea:focus {
+          outline: none !important;
+          border-color: #f59e0b !important; /* amber-500 on focus */
+      }
+      /* Remove any borders in dark mode for both sections */
+      body.dark-mode #skills .border,
+      body.dark-mode #contact .border {
+          border-color: transparent !important;
+      }
+      
+      body.dark-mode #skills .bg-gray-200 {
+          background-color: #475569 !important;
+      }
+      
+      body.dark-mode #skills .text-black {
+          color: #e2e8f0 !important;
       }
       
       body.dark-mode #contact h1 span:last-child {
@@ -74,7 +111,7 @@
       }
   </style>
 </head>
-<body class="bg-white ">
+<body >
     <header class="bg-black h-20 w-full shadow-lg shadow-gray-700 bg-fixed ">
       
         <ul class="flex justify-end items-center text-white space-x-10 p-2 text-xl mx-4 font-bold">
@@ -159,7 +196,7 @@
     </section>
 
       <hr class="border-2 mt-[20px]">
-    <section id="about" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section id="about" class="py-12 sm:py-16 lg:py-20 bg-gray-200 relative overflow-hidden">
         <!-- Subtle background pattern -->
         <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23f3f4f6" fill-opacity="0.4"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
         
@@ -203,28 +240,28 @@
         </div>
     </section>
     <hr class="border-2 mt-[20px]">
-    <section class="w-full py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 relative overflow-hidden">
+    <section id="skills" class="w-full py-12 sm:py-16 lg:py-20 bg-gray-200 relative overflow-hidden">
         <!-- Subtle geometric pattern overlay -->
         <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Cpath d="M20 20c0 11.046-8.954 20-20 20s-20-8.954-20-20 8.954-20 20-20 20 8.954 20 20z"/%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-center mb-12 sm:mb-16 lg:mb-20 font-bold">
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">My</span> 
-                <span class="text-white ml-2 sm:ml-4 lg:ml-6">Skills</span>
+                <span class="text-gray-800 ml-2 sm:ml-4 lg:ml-6">Skills</span>
             </h1>
             
-            <div class="bg-white/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 border border-white/10 shadow-2xl">
+            <div class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
                     <div class="space-y-8 sm:space-y-10 lg:space-y-12">
                         <div class="group">
                             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 space-y-2 sm:space-y-0">
                                 <div class="flex items-center gap-3 sm:gap-4">
                                     <i class="fa-brands fa-html5 text-orange-500 text-2xl sm:text-3xl lg:text-4xl group-hover:scale-110 transition-transform"></i>
-                                    <span class="text-lg sm:text-xl lg:text-2xl text-white font-semibold">HTML</span>
+                                    <span class="text-lg sm:text-xl lg:text-2xl text-gray-800 font-semibold">HTML</span>
                                 </div>
                                 <span class="text-sm sm:text-lg lg:text-xl bg-orange-500/20 text-orange-400 px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-orange-500/30 w-fit">90%</span>
                             </div>
-                            <div class="h-2 sm:h-3 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-2 sm:h-3 bg-gray-200 rounded-full overflow-hidden">
                                 <div class="h-2 sm:h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full transition-all duration-1000 ease-out" style="width:90%"></div>
                             </div>
                         </div>
@@ -233,11 +270,11 @@
                             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 space-y-2 sm:space-y-0">
                                 <div class="flex items-center gap-3 sm:gap-4">
                                     <i class="fa-brands fa-css3-alt text-blue-500 text-2xl sm:text-3xl lg:text-4xl group-hover:scale-110 transition-transform"></i>
-                                    <span class="text-lg sm:text-xl lg:text-2xl text-white font-semibold">CSS</span>
+                                    <span class="text-lg sm:text-xl lg:text-2xl text-gray-800 font-semibold">CSS</span>
                                 </div>
                                 <span class="text-sm sm:text-lg lg:text-xl bg-blue-500/20 text-blue-400 px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-blue-500/30 w-fit">60%</span>
                             </div>
-                            <div class="h-2 sm:h-3 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-2 sm:h-3 bg-gray-200 rounded-full overflow-hidden">
                                 <div class="h-2 sm:h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transition-all duration-1000 ease-out" style="width:60%"></div>
                             </div>
                         </div>
@@ -246,24 +283,24 @@
                             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 space-y-2 sm:space-y-0">
                                 <div class="flex items-center gap-3 sm:gap-4">
                                     <i class="fa-brands fa-js text-yellow-400 text-2xl sm:text-3xl lg:text-4xl group-hover:scale-110 transition-transform"></i>
-                                    <span class="text-lg sm:text-xl lg:text-2xl text-white font-semibold">JavaScript</span>
+                                    <span class="text-lg sm:text-xl lg:text-2xl text-gray-800 font-semibold">JavaScript</span>
                                 </div>
                                 <span class="text-sm sm:text-lg lg:text-xl bg-yellow-500/20 text-yellow-400 px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-yellow-500/30 w-fit">85%</span>
                             </div>
-                            <div class="h-2 sm:h-3 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-2 sm:h-3 bg-gray-200 rounded-full overflow-hidden">
                                 <div class="h-2 sm:h-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full transition-all duration-1000 ease-out" style="width:85%"></div>
-        </div>
-            </div>
-            
+                            </div>
+                        </div>
+
                         <div class="group">
                             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 space-y-2 sm:space-y-0">
                                 <div class="flex items-center gap-3 sm:gap-4">
                                     <i class="fa-brands fa-python text-purple-500 text-2xl sm:text-3xl lg:text-4xl group-hover:scale-110 transition-transform"></i>
-                                    <span class="text-lg sm:text-xl lg:text-2xl text-white font-semibold">Python</span>
+                                    <span class="text-lg sm:text-xl lg:text-2xl text-gray-800 font-semibold">Python</span>
                                 </div>
                                 <span class="text-sm sm:text-lg lg:text-xl bg-purple-500/20 text-purple-400 px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-purple-500/30 w-fit">50%</span>
                             </div>
-                            <div class="h-2 sm:h-3 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-2 sm:h-3 bg-gray-200 rounded-full overflow-hidden">
                                 <div class="h-2 sm:h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transition-all duration-1000 ease-out" style="width:50%"></div>
                             </div>
                         </div>
@@ -274,8 +311,8 @@
                             <div class="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-gradient-to-br from-orange-400 to-amber-500 rounded-full flex items-center justify-center mx-auto">
                                 <i class="fas fa-code text-white text-3xl sm:text-4xl lg:text-5xl"></i>
                             </div>
-                            <h3 class="text-xl sm:text-2xl text-white font-semibold">Technical Expertise</h3>
-                            <p class="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed max-w-xs sm:max-w-sm">
+                            <h3 class="text-xl sm:text-2xl text-gray-800 font-semibold">Technical Expertise</h3>
+                            <p class="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-xs sm:max-w-sm">
                                 Continuously expanding my skillset with modern web technologies and best practices
                             </p>
                         </div>
@@ -285,7 +322,7 @@
         </div>
     </section>
     <hr class="border-2 mt-[20px]">
-       <section id="contact" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 relative overflow-hidden">
+       <section id="contact" class="py-12 sm:py-16 lg:py-20 bg-gray-200 relative overflow-hidden">
         <!-- Subtle pattern overlay -->
         <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23f97316" fill-opacity="0.05"%3E%3Ccircle cx="40" cy="40" r="3"/%3E%3C/g%3E%3C/svg%3E')] opacity-60"></div>
         
@@ -295,30 +332,30 @@
                 <span class="text-gray-800 ml-2 sm:ml-4">Me</span>
             </h1>
             
-            <div class="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl border border-orange-200/50">
+            <div class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12">
                 <form class="space-y-6 sm:space-y-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                         <div class="form-group">
-                            <label class="block text-gray-700 mb-2 sm:mb-3 text-base sm:text-lg font-semibold" for="firstName">First name</label>
-                            <input class="w-full p-3 sm:p-4 border-2 border-orange-200 rounded-lg sm:rounded-xl bg-white/70 text-gray-800 focus:border-orange-500 focus:outline-none focus:bg-white transition-all duration-300 text-sm sm:text-base" type="text" id="firstName" name="firstName" required>
+                            <label class="block text-gray-800 mb-2 sm:mb-3 text-base sm:text-lg font-semibold" for="firstName">First name</label>
+                            <input class="w-full p-3 sm:p-4 border-2 border-gray-300 rounded-lg sm:rounded-xl bg-white text-gray-800 focus:border-orange-500 focus:outline-none focus:bg-gray-50 transition-all duration-300 text-sm sm:text-base" type="text" id="firstName" name="firstName" required>
                         </div>
 
                         <div class="form-group">
-                            <label class="block text-gray-700 mb-2 sm:mb-3 text-base sm:text-lg font-semibold" for="middleName">Middle name</label>
-                            <input class="w-full p-3 sm:p-4 border-2 border-orange-200 rounded-lg sm:rounded-xl bg-white/70 text-gray-800 focus:border-orange-500 focus:outline-none focus:bg-white transition-all duration-300 text-sm sm:text-base" type="text" id="middleName" name="middleName">
+                            <label class="block text-gray-800 mb-2 sm:mb-3 text-base sm:text-lg font-semibold" for="middleName">Middle name</label>
+                            <input class="w-full p-3 sm:p-4 border-2 border-gray-300 rounded-lg sm:rounded-xl bg-white text-gray-800 focus:border-orange-500 focus:outline-none focus:bg-gray-50 transition-all duration-300 text-sm sm:text-base" type="text" id="middleName" name="middleName">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="block text-gray-700 mb-2 sm:mb-3 text-base sm:text-lg font-semibold" for="email">Email</label>
-                        <input class="w-full p-3 sm:p-4 border-2 border-orange-200 rounded-lg sm:rounded-xl bg-white/70 text-gray-800 focus:border-orange-500 focus:outline-none focus:bg-white transition-all duration-300 text-sm sm:text-base" type="email" id="email" name="email" required>
+                        <label class="block text-gray-800 mb-2 sm:mb-3 text-base sm:text-lg font-semibold" for="email">Email</label>
+                        <input class="w-full p-3 sm:p-4 border-2 border-gray-300 rounded-lg sm:rounded-xl bg-white text-gray-800 focus:border-orange-500 focus:outline-none focus:bg-gray-50 transition-all duration-300 text-sm sm:text-base" type="email" id="email" name="email" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="block text-gray-700 mb-2 sm:mb-3 text-base sm:text-lg font-semibold" for="message">Message</label>
-                        <textarea class="w-full p-3 sm:p-4 border-2 border-orange-200 rounded-lg sm:rounded-xl bg-white/70 h-[150px] sm:h-[180px] lg:h-[200px] text-gray-800 focus:border-orange-500 focus:outline-none focus:bg-white transition-all duration-300 resize-none text-sm sm:text-base" id="message" name="message" rows="15" placeholder="Type your message here..." required></textarea>
-          </div> 
-          
+                        <label class="block text-gray-800 mb-2 sm:mb-3 text-base sm:text-lg font-semibold" for="message">Message</label>
+                        <textarea class="w-full p-3 sm:p-4 border-2 border-gray-300 rounded-lg sm:rounded-xl bg-white h-[150px] sm:h-[180px] lg:h-[200px] text-gray-800 focus:border-orange-500 focus:outline-none focus:bg-gray-50 transition-all duration-300 resize-none text-sm sm:text-base" id="message" name="message" rows="15" placeholder="Type your message here..." required></textarea>
+                    </div> 
+                    
                     <div class="text-center pt-4 sm:pt-6">
                         <button type="submit" class="group relative px-8 sm:px-10 lg:px-12 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-amber-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform text-sm sm:text-base">
                             <i class="fas fa-paper-plane mr-2 sm:mr-3 group-hover:translate-x-1 transition-transform"></i>
@@ -329,7 +366,7 @@
             </div>
         </div>
     </section>  
-  <footer class="py-8 sm:py-10 lg:py-12 bg-gradient-to-r from-slate-900 via-gray-800 to-slate-900 relative overflow-hidden">
+  <footer class="py-8 sm:py-10 lg:py-12 bg-black relative overflow-hidden">
         <!-- Subtle pattern overlay -->
         <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.02"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
         
